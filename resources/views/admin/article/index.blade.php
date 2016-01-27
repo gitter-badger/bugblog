@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-4">Atricles</div>
                         <div class="col-md-1 col-md-offset-7">
-                            <button type="button" class="btn btn-primary btn-xs " data-toggle="modal" data-url="/admin/article" data-method="post" data-target="#articleModal"> + 添加 </button>
+                            <button type="button" class="btn btn-primary btn-xs " data-toggle="modal" data-url="/admin/article" data-method="post" data-target="#modal"> + 添加 </button>
                         </div>
                     </div>
                   
@@ -61,7 +61,7 @@ $(function() {
             { data: 'created_at', name: 'created_at' },
             { data: 'updated_at', name: 'updated_at' },
             { data: 'id', name: 'edit', render: function(data, type, full, meta) {
-                return '<a href="javascript:;" class="btn btn-primary btn-xs edit" data-url="/admin/article/'+data+'" data-method="put" data-toggle="modal" data-target="#articleModal">Edit</a>\
+                return '<a href="javascript:;" class="btn btn-primary btn-xs edit" data-url="/admin/article/'+data+'" data-method="put" data-toggle="modal" data-target="#modal">Edit</a>\
                 <a href="javascript:;" class="btn btn-warning btn-xs" data-url="'+data+'">Top</a>\
                 <a href="javascript:;" data-placement="top" class="btn btn-danger btn-xs" data-trigger="focus" data-toggle="popover" >Delete</a>';
             }, orderable: false, searchable: false }

@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="articleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -58,7 +58,7 @@
 $(function() {
     var ue = UE.getEditor('content');
 
-    $('#articleModal').on('show.bs.modal', function (event) {
+    $('#modal').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
 		var action = button.data('url') // Extract info from data-* attributes
 		var method = button.data('method') // Extract info from data-* attributes
@@ -72,7 +72,7 @@ $(function() {
 	})
 
     // 隐藏modal
-	$('#articleModal').on('hidden.bs.modal', function(){
+	$('#modal').on('hidden.bs.modal', function(){
 	    $(this).find('form')[0].reset();
 	    ue.setContent("");
 	    validator.resetForm();
@@ -119,7 +119,7 @@ $(function() {
 			var options = { 
 				type: $(form).attr('method'),
 		        success: function(){
-		        	$("#articleModal").modal('hide');
+		        	$("#modal").modal('hide');
 		        	$('#articles-table').DataTable().ajax.reload( null, false );
 		        }, 
  
